@@ -32,9 +32,12 @@ font-family: Arial;
 font-weight: bold;
 font-size: 36px;
 text-align: center;
-display: none;
 
 
+}
+
+h2.appear {
+	display: none;
 }
 
 #social {
@@ -142,7 +145,7 @@ display: none;
     
     	<div class="holder">
         
-        <h1>#Visitphilly</h1>
+        <h1>Keep in Touch</h1> 
         
         	<ul>
         		
@@ -175,7 +178,7 @@ display: none;
         
         	</ul>
             
-            	<h2>and counting.</h2>
+            	<h2 class="appear">and counting.</h2>
         
         </div>
     
@@ -202,7 +205,7 @@ $.fn.digits = function () {
 	        $(this).prop('Counter', 0).animate({
 	            Counter: $(this).text()
 	        }, {
-	            duration: 3000,
+	            duration: 2400,
 	            easing: 'swing',
 	            step: function (now) {
 	                $(this).text(Math.ceil(now));

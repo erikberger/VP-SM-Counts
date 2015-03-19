@@ -1,0 +1,225 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>#Visitphilly.com Social Media Counts</title>
+  
+<style>
+
+body {
+	
+	margin: 0;
+	
+}
+
+h1 {
+
+color: #ee3d31;
+font-family: Arial;
+font-weight: bold;
+text-transform: uppercase;
+font-size: 48px;
+text-align: center;
+display: block;
+	
+}
+
+h2{
+color: #ee3d31;
+font-family: Arial;
+font-weight: bold;
+font-size: 36px;
+text-align: center;
+display: none;
+
+
+}
+
+#social {
+	width: 100%;
+	background-color: #efefef;
+	margin: 300px 0;
+}
+
+.holder {
+	
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 20px 0;
+	min-height: 479px;
+
+}
+
+.holder ul {
+	
+	margin: 0 auto;
+	display: block;
+	overflow: auto;
+	
+}
+
+
+.holder li {
+
+	float: left;
+	display: inline;
+	padding: 20px;
+	display: block;
+	text-align: center;
+	list-style-type:none
+	
+
+}
+
+.count {
+
+	padding-bottom: 15px;
+	font-size: 26px;
+	font-family: Arial;	
+	opacity: 0;
+	
+}
+
+.fb {
+
+	color: #547bbe;
+	
+}
+
+.tw {
+
+	color: #5ab3dc;
+	
+}
+
+.in {
+
+	color: #c09b85;
+	
+}
+
+
+.pn {
+
+	color: #c33946;
+	
+}
+
+
+.yt {
+
+	color: #d54444;
+	
+}
+
+.smlogo img {
+
+	border: none;
+
+}
+
+.smlogo a:hover {
+
+	opacity: .75;
+	
+}
+
+
+</style>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+ 
+ 	<div id="social">
+    
+    	<div class="holder">
+        
+        <h1>#Visitphilly</h1>
+        
+        	<ul>
+        		
+                <li>                
+                	<div class="count fb">444436</div>                
+                	<div class="smlogo"><a href="http://www.facebook.com/visitphilly" target="_blank"><img src="logos/facebook-128.png"></a></div>
+                </li>
+                
+                <li>                
+                	<div class="count tw">95585</div>                
+                	<div class="smlogo"><a href="http://www.twitter.com/visitphilly" target="_blank"><img src="logos/twitter-128.png"></a></div>
+                </li>
+                
+                <li>                
+                	<div class="count in">36980</div>                
+                	<div class="smlogo"><a href="http://www.instagram.com/visitphilly" target="_blank"><img src="logos/instagram-128.png"></a></div>
+                </li>
+                
+                <li>                
+                	<div class="count pn">8493</div>                
+                	<div class="smlogo"><a href="http://www.pinterest.com/visitphilly" target="_blank"><img src="logos/pinterest-128.png"></a></div>
+                </li>
+                
+                <li>                
+                	<div class="count yt">1272</div>                
+                	<div class="smlogo"><a href="http://www.youtube.com/visitphilly" target="_blank"><img src="logos/youtube-128.png"></a></div>
+                </li>
+        
+        
+        
+        	</ul>
+            
+            	<h2>and counting.</h2>
+        
+        </div>
+    
+    
+    
+    
+    </div>
+    
+    <script>
+	
+$.fn.digits = function () {
+	    return this.each(function () {
+	        $(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+	    })
+	}
+
+	//$(document).ready(function () {
+	
+	 $('#social').waypoint(function() {
+	 
+		$('.count').css('opacity', 1);
+
+	    $('.count').each(function () {
+	        $(this).prop('Counter', 0).animate({
+	            Counter: $(this).text()
+	        }, {
+	            duration: 3000,
+	            easing: 'swing',
+	            step: function (now) {
+	                $(this).text(Math.ceil(now));
+	            }
+	        });
+	    }).promise().done(function () {
+
+	        $(".count").digits();
+
+	        $("h2").fadeIn("slow");
+
+	        
+	    });
+	});
+	
+	</script>
+ 
+ 
+</body>
+</html>
